@@ -35,6 +35,19 @@ The easiest way to run the application is using Docker Compose.
     ```
     You should see `{"status":"OK"}`.
 
+### ⚡ Convenience Commands (Makefile)
+
+If you have `make` installed, you can use the following commands:
+
+| Command | Description |
+|---------|-------------|
+| `make docker-up` | Starts the application using Docker Compose (same as Quick Start) |
+| `make docker-down` | Stops and removes Docker containers |
+| `make build` | Builds the Go binary locally |
+| `make run` | Builds and runs the application locally (requires DB connection) |
+| `make clean` | Removes build artifacts |
+| `make migrate-up` | Runs database migrations manually |
+
 ## 📚 Documentation
 
 *   **[API Specification](docs/API_SPEC.md)**: Detailed endpoint definitions.
@@ -56,17 +69,6 @@ For more details on testing, see **[TESTING.md](TESTING.md)**.
 
 ### Project Structure
 See **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** for a detailed breakdown of the project layout.
-
-### Database Migrations
-Migrations are handled automatically on startup. To manage them manually:
-```bash
-# Create a new migration
-make migrate-create name=my_migration
-
-# Run migrations manually (if running locally without Docker)
-go run cmd/migrate.go up
-```
-See **[MIGRATIONS.md](MIGRATIONS.md)** for more details.
 
 ## 🔒 Security Features
 
