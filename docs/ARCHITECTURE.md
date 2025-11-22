@@ -19,6 +19,8 @@ graph TD
     end
 ```
 
+![Architecture Diagram](./architecture_diagram.png)
+
 ### Key Components
 1.  **Entry Point (Nginx)**: Acts as a reverse proxy and load balancer, exposing only port 80 to the outside world. It forwards requests to the internal Go application.
 2.  **Application Layer (Go)**:
